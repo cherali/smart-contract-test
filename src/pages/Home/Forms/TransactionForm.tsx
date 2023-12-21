@@ -29,7 +29,6 @@ const TransactionForm = () => {
       transferQuery.status === 'idle' &&
       address
     ) {
-      console.log('write transfer')
       transferQuery.write?.()
     }
   }, [transferQuery])
