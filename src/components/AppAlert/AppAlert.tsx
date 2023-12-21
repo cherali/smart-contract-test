@@ -2,7 +2,7 @@ import type { FC } from 'react'
 import type { AppAlertProps } from './types'
 import clsx from 'clsx'
 
-const AppAlert: FC<AppAlertProps> = ({ text = '', type = 'warning', className = '' }) => {
+const AppAlert: FC<AppAlertProps> = ({ text = '', className = '' }) => {
   return (
     <section
       className={clsx(
