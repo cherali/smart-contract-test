@@ -1,9 +1,7 @@
-function App() {
-  return (
-    <section>
-      <h1>hello world</h1>
-    </section>
-  )
+import HomePage from '@/pages/Home/HomePage'
+
+const App = () => {
+  return <HomePage />
 }
 
 export default App
