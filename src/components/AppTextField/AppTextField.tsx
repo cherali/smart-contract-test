@@ -57,7 +57,7 @@ const AppTextField = forwardRef<HTMLInputElement, AppTextFieldProps>(
                 'bg-gray-900 border border-gray-700 rounded-md outline-none block text-base',
                 error
                   ? 'focus:border-red-600 border-red-500 !text-red-600'
-                  : 'focus:border-purple-600 border-gray-800',
+                  : 'focus:border-cyan-500 border-gray-800',
                 'disabled:text-gray-400 disabled:bg-gray-700 disabled:cursor-not-allowed',
               )}
               type={type}

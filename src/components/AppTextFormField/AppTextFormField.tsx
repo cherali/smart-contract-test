@@ -3,7 +3,7 @@ import { Controller, useFormContext } from 'react-hook-form'
 import AppTextField from '@/components/AppTextField/AppTextField'
 import type { AppTextFormFieldProps } from './types'
 
-const AppTextFormField: FC<AppTextFormFieldProps> = ({ name, ...props }) => {
+const AppTextFormField: FC<AppTextFormFieldProps> = ({ name, disabled, ...props }) => {
   const { control } = useFormContext()
 
   return (
@@ -13,7 +13,7 @@ const AppTextFormField: FC<AppTextFormFieldProps> = ({ name, ...props }) => {
           <AppTextField
             error={Boolean(error?.message)}
             helperText={error?.message}
-            {...Object.assign({}, props, field)}
+            {...Object.assign({}, props, field, { disabled: field.disabled || disabled })}
           />
         </section>
       )}

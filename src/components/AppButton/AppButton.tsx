@@ -14,8 +14,8 @@ const AppButton: FC<AppButtonProps> = ({
       type='submit'
       className={clsx(
         className,
-        'bg-purple-700 text-white w-full py-2 px-4 rounded-md capitalize outline-none',
-        'focus:ring-2 focus:ring-purple-800 focus:ring-offset-1 focus:ring-offset-transparent',
+        'bg-cyan-700 text-white w-full py-2 px-4 rounded-md capitalize outline-none',
+        'focus:ring-2 focus:ring-cyan-800 focus:ring-offset-1 focus:ring-offset-transparent',
         'disabled:text-gray-400 disabled:bg-gray-700',
       )}
       {...props}
