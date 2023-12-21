@@ -6,7 +6,8 @@ const AppAlert: FC<AppAlertProps> = ({ text = '', type = 'warning', className = 
   return (
     <section
       className={clsx(
-        'flex items-center p-4 mb-4 text-sm border rounded-lg bg-gray-900 text-yellow-300 border-yellow-600',
+        'flex items-center p-4 mb-4 text-sm border rounded-lg bg-gray-900 text-red-600 border-red-800',
+        'word-break',
         className,
       )}
       role='alert'
