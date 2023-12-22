@@ -76,7 +76,7 @@ const TransactionForm = () => {
 
           <Info walletAddress={address} />
           <AppButton disabled={isDisabled}>
-            {transferQuery.isLoading ? 'waiting for conformation' : 'transfer tokens'}
+            {transferQuery.isLoading ? 'waiting for confirmation' : 'transfer tokens'}
           </AppButton>
         </section>
       </AppForm>
