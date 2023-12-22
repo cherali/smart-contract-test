@@ -1,11 +1,10 @@
 import { useEffect } from 'react'
-import { useWaitForTransaction } from 'wagmi'
+import { useAccount, useWaitForTransaction } from 'wagmi'
 import * as yup from 'yup'
 import type { MintFormInput } from '@/types/contract'
 import { useMintableErc20Mint, usePrepareMintableErc20Mint } from '@/hooks/contractHooks'
 import { getErrorMessage } from '@/utils/string'
 import { useMintStore } from '@/store/mintStore'
-import { useConnectStore } from '@/store/connectStore'
 import { useStepStore } from '@/store/stepStore'
 import AppForm from '@/components/AppForm/AppForm'
 import AppTextFormField from '@/components/AppTextFormField/AppTextFormField'
@@ -15,7 +14,7 @@ import AppAlert from '@/components/AppAlert/AppAlert'
 const MintForm = () => {
   const mint = useMintStore(s => s.mint)
   const setMint = useMintStore(s => s.setMint)
-  const isWalletConnected = useConnectStore(s => s.isConnected)
+  const { isConnected } = useAccount()
   const setStep = useStepStore(s => s.setStep)
 
   const prepareMintQuery = usePrepareMintableErc20Mint({
@@ -85,7 +84,7 @@ const MintForm = () => {
         </section>
       </AppForm>
 
-      {prepareMintQuery.isError && isWalletConnected && (
+      {prepareMintQuery.isError && isConnected && (
         <AppAlert text={getErrorMessage(prepareMintQuery.error)} className='mt-4' />
       )}
       {mintQuery.isError && <AppAlert text={getErrorMessage(mintQuery.error)} className='mt-4' />}

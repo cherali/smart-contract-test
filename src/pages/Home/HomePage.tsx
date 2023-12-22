@@ -1,5 +1,5 @@
 import { useStepStore } from '@/store/stepStore'
-import { useConnectStore } from '@/store/connectStore'
+import { useAccount } from 'wagmi'
 import AppSteps from '@/components/AppSteps/AppSteps'
 import Connection from './Connection'
 import MintForm from './Forms/MintForm'
@@ -8,7 +8,7 @@ import Success from './Success'
 
 const HomePage = () => {
   const step = useStepStore(s => s.step)
-  const isConnected = useConnectStore(s => s.isConnected)
+  const { isConnected } = useAccount()
 
   const steps = ['mint', 'transfer', 'success']
 

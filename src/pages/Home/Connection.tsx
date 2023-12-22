@@ -1,22 +1,12 @@
-import { useEffect } from 'react'
 import { useAccount, useConnect, useDisconnect } from 'wagmi'
-import { useConnectStore } from '@/store/connectStore'
 import { getErrorMessage } from '@/utils/string'
 import AppAlert from '@/components/AppAlert/AppAlert'
 import AppButton from '@/components/AppButton/AppButton'
 
 const Connection = () => {
-  const connected = useConnectStore(s => s.isConnected)
-  const setConnected = useConnectStore(s => s.setIsConnected)
   const { connector, isConnected, address } = useAccount()
   const { connect, connectors, error, isError, isLoading, pendingConnector } = useConnect()
   const { disconnect } = useDisconnect()
-
-  useEffect(() => {
-    if (connected !== isConnected) {
-      setConnected(isConnected)
-    }
-  }, [isConnected])
 
   const handleDisconnect = () => disconnect()
 
